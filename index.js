@@ -41,7 +41,7 @@ app.post("/questions/:id/options/create", async (request, response) => {
       questionId: id,
     });
 
-    const url = `http://localhost:3002`;
+    const url = `https://polling-system-api-ofd2.onrender.com`;
     option.link_to_vote = `${url}/options/${option.id}/add_vote`;
     const result = await option.save();
 
