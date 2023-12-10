@@ -4,6 +4,9 @@ const optionSchema = new mongoose.Schema({
   questionId: { type: mongoose.Schema.Types.ObjectId, ref: "Question", required: true },
   text: { type: String, required: true },
   votes: { type: Number, default: 0 },
+  link_to_vote: { type: String },
 });
 
-module.exports = mongoose.model("options", optionSchema);
+const Option = mongoose.model("Option", optionSchema); // Register the model
+
+module.exports = Option;
